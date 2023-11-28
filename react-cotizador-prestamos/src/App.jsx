@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./components/Header";
 import Buttons from "./components/Buttons";
+import { formMoney } from "./utils";
 
 /* ------ Sintaxis JAVASCRIPT ------ */
 
@@ -39,11 +40,11 @@ function App() {
       <Header/>
       <div className="flex justify-between my-6">
         <Buttons
-        operator = "-"
+        operator ="-"
         fn= {handleClickDecrement}
          />
         <Buttons
-        operator = "+"
+        operator ="+"
         fn= {handleClickIncrement}
          />
 
@@ -57,7 +58,8 @@ function App() {
       step={STEP}
       value={cantidad}
        />
-      <p className="text-center my-10 text-5xl font-extrabold text-indigo-600">{cantidad}</p>
+      <p className="text-center my-10 text-5xl font-extrabold text-indigo-600">
+        {formMoney(cantidad)}</p>
     </div>
   )
 }
