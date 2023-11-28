@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
+import Buttons from "./components/Buttons";
 
 /* ------ Sintaxis JAVASCRIPT ------ */
 
@@ -32,31 +33,19 @@ function App() {
     setCantidad(valor);
   }
 
-
-
-
-
-
- 
   return (
     /* ------ Sintaxis HTML ------ */
     <div className="my-20 max-w-lg mx-auto bg shadow p-10">
       <Header/>
       <div className="flex justify-between my-6">
-        <button 
-        type="button"
-        className="h-10 w-10 flex items-center justify-center font-bold text-white
-        text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2
-        hover:ring-offset-2 hover:ring-lime-500"
-        onClick={handleClickDecrement}
-        >-</button>
-        <button 
-        type="button"
-        className="h-10 w-10 flex items-center justify-center font-bold text-white
-        text-2xl bg-lime-500 rounded-full hover:outline-none hover:ring-2
-        hover:ring-offset-2 hover:ring-lime-500"
-        onClick={handleClickIncrement}
-        >+</button>
+        <Buttons
+        operator = "-"
+        fn= {handleClickDecrement}
+         />
+        <Buttons
+        operator = "+"
+        fn= {handleClickIncrement}
+         />
 
       </div>
       <input 
